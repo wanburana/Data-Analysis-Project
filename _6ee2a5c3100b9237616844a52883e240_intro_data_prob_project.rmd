@@ -31,7 +31,11 @@ load("brfss2013.RData")
 * * *
 
 ## Part 1: Data
+The data were collected by telephone-based survey, divided into two main categories, landline telephone-based survey and cellular telephone-based survey. In the former method, the random adult from the household is selected. In the latter method, the survey is proceeded by selecting the participater who is living in the private residence or college housing using cellular telephone
 
+There were no experiment conducted, the data from the survey is an observation, so the result from the survey only imply correlation, not causation
+
+The survey data are collected across the US, so it could be generalized to the population of the US.
 
 * * *
 

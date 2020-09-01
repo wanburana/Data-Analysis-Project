@@ -35,18 +35,42 @@ The data were collected by telephone-based survey, divided into two main categor
 
 There were no experiment conducted, the data from the survey is an observation, so the result from the survey only imply correlation, not causation
 
-The survey data are collected across the US, so it could be generalized to the population of the US.
+The survey data are collected across the US, the sample is large enough to be generalized to the population of the US.
 
 * * *
 
 ## Part 2: Research questions
 
 **Research quesion 1:**
-What is the relationship between the mental health and sleep time?
+Is there any correlation between the number of children and the satisfaction of life? Furthermore, are there any noticable difference in this correlation among the difference level of income?
+
+### Discussion
+This question is interesting because there were several discussion on the internet forum talking positively and negatively about their kids , which may not be the good representative to the whole population because people who are more upfront may be the group of people who have an strong opinions about something.
+
+### Used variable:
+- lsatisfy: Satisfaction With Life
+- children: Number Of Children In Household
+- income2: Income Level
+
 **Research quesion 2:**
-What is the relationship of frequency of smoking and any type of cancer?
+Is there any correlation between the number of children and the level of income?
+
+### Discussion
+Eventhough people with higher income should be able to afford more children compared to the people with lower income, but generally I have seen alot of people with lower income with a lot of children. So it was quite interesting question to me
+
+### Used variable:
+- children: Number Of Children In Household
+- income2: Income Level
+
 **Research quesion 3:**
-Will peoson who regular taking the sugar-sweetened food more likely to have a diabetes? 
+Are there any relationship between the smoking status, alcohol consuming status and poor physical health status
+
+### Discussion
+Smoking and consuming alcohol are tend to be done together. So  it would be interesting to see if they will affect the person's health or not
+
+### Used variable:
+- _smoker3: Computed Smoking Status
+- _rfdrhv4: Heavy Alcohol Consumption Calculated Variable
 
 * * *
 
@@ -67,7 +91,11 @@ in the project you submit. Delete this note when before you submit your work.
 **Research quesion 2:**
 
 ```{r}
-
+df <- data.frame(brfss2013$smokday2,brfss2013$chcocncr)
+df <- df[complete.cases(df),]
+ggplot(df,aes(brfss2013.smokday2,..count..)) + 
+  geom_bar(aes(fill = brfss2013.chcocncr),position = "fill") +
+  labs(x = "Frequency of smoking", fill = 'Told having cancer')
 ```
 
 

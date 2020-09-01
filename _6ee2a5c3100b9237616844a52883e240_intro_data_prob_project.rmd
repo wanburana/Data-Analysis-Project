@@ -42,9 +42,9 @@ The survey data are collected across the US, so it could be generalized to the p
 ## Part 2: Research questions
 
 **Research quesion 1:**
-
+What is the relationship between the mental health and sleep time?
 **Research quesion 2:**
-
+What is the relationship of frequency of smoking and any type of cancer?
 **Research quesion 3:**
 
 

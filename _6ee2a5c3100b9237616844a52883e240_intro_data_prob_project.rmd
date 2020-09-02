@@ -156,6 +156,7 @@ ggplot(q3,aes(poorhlth)) +
   facet_grid(X_smoker3 ~ X_rfdrhv4) +
   theme(strip.text.y = element_text(angle = 0))
 ```
+
 According to the figure, it was clear that people have a history of smoking have more days with poorer health compared to the people who never smoke, with people who smoke everyday having the most health issue, and people who smoke less have less days of health issue respectively, no matter if they are binge drinker or not.
 
 On the other hand, majority of people who are binge drinker, surprisingly, have less days with mental health compared to people who are not binge drinker. This apply to all level of smoking. 

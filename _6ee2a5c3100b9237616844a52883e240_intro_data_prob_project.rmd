@@ -56,7 +56,7 @@ This question is interesting because there were several discussion on the intern
 Is there any correlation between the number of children and the level of income?
 
 ### Discussion
-Eventhough people with higher income should be able to afford more children compared to the people with lower income, but generally I have seen alot of people with lower income with a lot of children. So it was quite interesting question to me
+This question use the same variable as the question 1, but shift the focus to different topic. Eventhough people with higher income should be able to afford more children compared to the people with lower income, but generally I have seen alot of people with lower income with a lot of children. So it was quite interesting question to me to see the actual result from the collected survey
 
 ### Used variable:
 - children: Number Of Children In Household

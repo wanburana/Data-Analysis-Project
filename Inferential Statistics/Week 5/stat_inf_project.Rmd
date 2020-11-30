@@ -82,10 +82,12 @@ According to the bar chart above, there is a visible trend shows that the upper 
 ## Part 4: Inference
 
 Step 1: State hypotheses
+
   H0: The opinion on abortion is independent to the social class
   HA: The opinion on abortion is not independent to the social class
 
 Step 2: Check conditions
+
   1. Independence
   - The sampling method is random
   - The sample is less than 10% of the population
@@ -93,10 +95,11 @@ Step 2: Check conditions
   2. Sample size
   - Each scenerio have at least 5 expected cases
 
-Step 3: State the method(s) to be used and why and how
+Step 3: State the method(s) to be used and why and how\n
   Since we want to know whether one variable is independent to another variable or not, Chi-Square Test of Independence will be used to conduct an analysis. By comparing observed values and the expected values, if sum of the different between observed and expected values is high, it is more likely that the variable is dependent to each other.
 
 Step 4: Perform inference
+
 ```{r}
 inference(y= abany, x = as.factor(class), 
           data = interested_data,
@@ -109,4 +112,5 @@ inference(y= abany, x = as.factor(class),
 ```
 
 Step 5: Interpret results
-  With very high chi-squared value resulting in very low p-value, we can say that it is very unlikely that the difference of the proportion of the opinion on abortion topic in each class is due to chance, and thus  reject the null hypothesis and conclude that the opinion on abortion is dependent to the social class
+
+  With very high chi-squared value resulting in very low p-value, we can say that it is very unlikely that the difference of the proportion of the opinion on abortion topic in each class is due to chance, and thus we reject the null hypothesis and conclude that the opinion on abortion is dependent to the social class.

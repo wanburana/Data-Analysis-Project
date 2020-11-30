@@ -32,6 +32,7 @@ load("gss.Rdata")
 * * *
 
 ## Part 1: Data
+
 There were two sampling method used in the surveying. The earlier one is "modified probability sample", introduces the quota element at the block level, used from 1972 to 1974. In 1975-1977, the new method was introduced called " full probability sample", but used for only for one-half of the survey, another half still used the old method for transitioning. From years 1977+, The survey method fully switched to full probability sample.
 
 The data was gathered throughout the US by modified probability sampling and full probability samplling, so it can be generalized to the whole population of the US. On the other hand, the data collected by the survey is observational data, unlike experimental data, we cannot draw any causality from the result of the analysis.
@@ -39,6 +40,7 @@ The data was gathered throughout the US by modified probability sampling and ful
 * * *
 
 ## Part 2: Research question
+
 Does the opinion on abortion with any reasons independence with people in different social class,i.e., do people from one social class have different opinion on abortion topic compared to the people in another class.
 
 Different social class of people tend to show some trend on the way of thinking in many different topic, it would be interesting to try investigating this abortion topic based on the same criteria.
@@ -79,8 +81,24 @@ According to the bar chart above, there is a visible trend shows that the upper 
 
 ## Part 4: Inference
 
+Step 1: State hypotheses
+  H0: The opinion on abortion is independent to the social class
+  HA: The opinion on abortion is not independent to the social class
+
+Step 2: Check conditions
+  1. Independence
+  - The sampling method is random
+  - The sample is less than 10% of the population
+  - Each case contribute to only one cell in the table
+  2. Sample size
+  - Each scenerio have at least 5 expected cases
+
+Step 3: State the method(s) to be used and why and how
+  Since we want to know whether one variable is independent to another variable or not, Chi-Square Test of Independence will be used to conduct an analysis. By comparing observed values and the expected values, if sum of the different between observed and expected values is high, it is more likely that the variable is dependent to each other.
+
+Step 4: Perform inference
 ```{r}
-inference(abany, x = as.factor(class), 
+inference(y= abany, x = as.factor(class), 
           data = interested_data,
           type = 'ht',
           statistic = 'proportion',
@@ -90,3 +108,5 @@ inference(abany, x = as.factor(class),
           )
 ```
 
+Step 5: Interpret results
+  With very high chi-squared value resulting in very low p-value, we can say that it is very unlikely that the difference of the proportion of the opinion on abortion topic in each class is due to chance, and thus  reject the null hypothesis and conclude that the opinion on abortion is dependent to the social class

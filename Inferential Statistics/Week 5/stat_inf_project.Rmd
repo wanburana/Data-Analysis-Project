@@ -80,6 +80,13 @@ According to the bar chart above, there is a visible trend shows that the upper 
 ## Part 4: Inference
 
 ```{r}
-
+inference(abany, x = as.factor(class), 
+          data = interested_data,
+          type = 'ht',
+          statistic = 'proportion',
+          success = 'Yes',
+          method = 'theoretical',
+          null = 0,
+          )
 ```
 

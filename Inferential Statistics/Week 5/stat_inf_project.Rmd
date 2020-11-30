@@ -1,0 +1,85 @@
+---
+title: "Statistical inference with the GSS data"
+output: 
+  html_document: 
+    fig_height: 4
+    highlight: pygments
+    theme: spacelab
+---
+
+## Setup
+
+### Load packages
+
+```{r load-packages, message = FALSE}
+library(ggplot2)
+library(dplyr)
+library(statsr)
+```
+
+### Load data
+
+Make sure your data and R Markdown files are in the same directory. When loaded
+your data file will be called `gss`. Delete this note when before you submit 
+your work. 
+
+```{r load-data}
+load("gss.Rdata")
+```
+
+
+
+* * *
+
+## Part 1: Data
+There were two sampling method used in the surveying. The earlier one is "modified probability sample", introduces the quota element at the block level, used from 1972 to 1974. In 1975-1977, the new method was introduced called " full probability sample", but used for only for one-half of the survey, another half still used the old method for transitioning. From years 1977+, The survey method fully switched to full probability sample.
+
+The data was gathered throughout the US by modified probability sampling and full probability samplling, so it can be generalized to the whole population of the US. On the other hand, the data collected by the survey is observational data, unlike experimental data, we cannot draw any causality from the result of the analysis.
+
+* * *
+
+## Part 2: Research question
+Does the opinion on abortion with any reasons independence with people in different social class,i.e., do people from one social class have different opinion on abortion topic compared to the people in another class.
+
+Different social class of people tend to show some trend on the way of thinking in many different topic, it would be interesting to try investigating this abortion topic based on the same criteria.
+
+* * *
+
+## Part 3: Exploratory data analysis
+
+Select the interested data from the raw data
+```{r}
+interested_data <- gss %>%
+  select(class,abany)
+```
+
+See the summary of the data
+```{r}
+summary(interested_data)
+```
+
+The "No Class" data will be removed due to having only 1 sample. The missing NA data will also be removed from both columns
+```{r}
+interested_data <- 
+  interested_data[interested_data$class != 'No Class',] %>%
+  na.omit()
+  
+  
+```
+
+Show the summary of the data again, as well as plotting the bar graph of the data
+```{r}
+summary(interested_data)
+ggplot(data = interested_data,aes(class,fill = abany)) + geom_bar(position = 'fill')
+```
+
+According to the bar chart above, there is a visible trend shows that the upper class tend answer the survey with "Yes" (It should be possible for a pregnant woman to obtain a legal abortion for any reason) compared to the lower class with more answer if "No" (It should not be possible for a pregnant woman to obtain a legal abortion for any reason)
+
+* * *
+
+## Part 4: Inference
+
+```{r}
+
+```
+
